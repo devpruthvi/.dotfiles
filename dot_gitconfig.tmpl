@@ -1,0 +1,16 @@
+[user]
+    email = {{ .email | quote }}
+    name = {{ .full_name | quote }}
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+    pager = delta
+[credential]
+    {{ if eq .chezmoi.os "darwin" -}}
+    helper = osxkeychain
+    {{ else -}}
+    helper = cache
+    {{- end }}
+[delta]
+    line-numbers = true
+    hyperlinks = true

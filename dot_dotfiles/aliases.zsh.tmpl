@@ -1,0 +1,17 @@
+#!/bin/zsh
+{{- $aliasGlob := osClean (printf "%v%v" .chezmoi.sourceDir "/.components/**/aliases.zsh") }}
+{{ $aliases := glob $aliasGlob -}}
+
+{{range $val := $aliases}}
+########## "{{ $val }}" ##########
+{{ include $val }}
+{{end}}
+
+{{- $templatePathGlob := osClean (printf "%v%v" .chezmoi.sourceDir "/.components/**/aliases.zsh.tmpl") }}
+{{ $templatePaths := glob $templatePathGlob -}}
+{{ $rootData := . -}}
+
+{{range $val := $templatePaths}}
+########## "{{ $val }}" ##########
+{{ includeTemplate $val $rootData }}
+{{end}}

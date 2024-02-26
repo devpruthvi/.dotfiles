@@ -1,0 +1,29 @@
+#!/bin/zsh
+
+# This needs to be loaded first as it will define the env variables such as $DOTFILES etc.,
+. "$HOME/.dotfiles/defaults.zsh"
+source "$DOTFILES/paths.zsh"
+source "$DOTFILES/aliases.zsh"
+
+# Load all init files from dotfiles
+for file in $DOTFILES/*/init.zsh; do
+  source "$file"
+done
+
+source "$DOTFILES/completions.zsh"
+
+# ohmyzsh
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
+
+# Force re-completion
+autoload -U compinit && compinit
+
+# Load Custom Zsh config
+if [ -f $HOME/.zshrc.custom ]; then
+  source $HOME/.zshrc.custom
+fi
+
+# Load Custom Alias config
+if [ -f $HOME/.aliasrc.custom ]; then
+  source $HOME/.aliasrc.custom
+fi

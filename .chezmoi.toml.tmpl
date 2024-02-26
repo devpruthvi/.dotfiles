@@ -1,0 +1,9 @@
+{{- $full_name := promptStringOnce . "full_name" "Full Name" -}}
+{{- $email := promptStringOnce . "email" "Email" -}}
+{{- $workspace_dir := promptStringOnce . "workspace_dir" "Workspace directory" -}}
+
+[data]
+    full_name = {{ $full_name | quote }}
+    email = {{ $email | quote }}
+    workspace_dir = {{ osClean (printf "%q" (print .chezmoi.homeDir "/" $workspace_dir)) }}
+
