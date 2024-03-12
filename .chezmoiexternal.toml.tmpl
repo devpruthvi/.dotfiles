@@ -3,6 +3,17 @@
 {{ $fontPathDict := dict "linux" ".fonts" "darwin" "Library/Fonts"}}
 {{ $fontDir := osClean (get $fontPathDict .chezmoi.os) }}
 
+####################### Tmux ############################
+
+[".tmux/plugins/tpm"]
+    type = "archive"
+    url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
+    exact = false
+    stripComponents = 1
+    refreshPeriod = "168h"
+
+####################### /Tmux ###########################
+
 ####################### Oh-My-Zsh #######################
 [".oh-my-zsh"]
     type = "archive"
@@ -84,6 +95,12 @@
 ["{{ $fontDir }}/Meslo"]
 	type = "archive"
 	url = "https://github.com/ryanoasis/nerd-fonts/releases/download/{{ $nerdFontsLatest }}/Meslo.zip"
+	exact = true
+	refreshPeriod = "168h"
+
+["{{ $fontDir }}/Iosevka"]
+	type = "archive"
+	url = "https://github.com/ryanoasis/nerd-fonts/releases/download/{{ $nerdFontsLatest }}/Iosevka.zip"
 	exact = true
 	refreshPeriod = "168h"
 
