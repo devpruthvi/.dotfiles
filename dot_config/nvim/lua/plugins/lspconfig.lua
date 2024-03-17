@@ -125,6 +125,8 @@ return {
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
             require("lspconfig")[server_name].setup(server)
           end,
+          -- disable automatic jdtls setup as we will use separate ftplugin to configure jdtls
+          ["jdtls"] = function() end,
         },
       })
     end,

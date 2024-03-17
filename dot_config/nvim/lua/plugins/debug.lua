@@ -22,6 +22,8 @@ return {
 
       ensure_installed = {
         "delve",
+        "javadbg",
+        "javatest",
       },
     })
 

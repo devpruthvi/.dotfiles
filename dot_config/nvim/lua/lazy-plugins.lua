@@ -1,5 +1,6 @@
 require("lazy").setup({
   "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  "mfussenegger/nvim-jdtls",
 
   { "numToStr/Comment.nvim", opts = {} },
 
@@ -13,8 +14,8 @@ require("lazy").setup({
   require("plugins/todo-comments"),
   require("plugins/mini"),
   require("plugins/treesitter"),
-  -- Enable DAP & Indent lines
-  -- require 'plugins/debug',
+  require("plugins/debug"),
+  -- Uncomment to enable indent lines
   -- require 'plugins/indent_line',
 }, {
   ui = {
