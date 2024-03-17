@@ -1,9 +1,9 @@
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'java', 'lua', 'markdown', 'python', 'vim', 'vimdoc' },
+      ensure_installed = { "bash", "c", "html", "java", "lua", "markdown", "python", "vim", "vimdoc" },
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
@@ -12,7 +12,7 @@ return {
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
       ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+      require("nvim-treesitter.configs").setup(opts)
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
