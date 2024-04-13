@@ -8,8 +8,8 @@ return {
 
     "williamboman/mason.nvim",
     "jay-babu/mason-nvim-dap.nvim",
+    "nvim-neotest/nvim-nio",
 
-    "leoluz/nvim-dap-go",
   },
   config = function()
     local dap = require("dap")
@@ -69,8 +69,5 @@ return {
     dap.listeners.before.event_exited.dapui_config = function()
       dapui.close()
     end
-
-    -- Install golang specific config
-    require("dap-go").setup()
   end,
 }
