@@ -3,6 +3,15 @@ require("lazy").setup({
   "mfussenegger/nvim-jdtls",
 
   { "numToStr/Comment.nvim", opts = {} },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+  { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
   require("plugins/gitsigns"),
   require("plugins/which-key"),
