@@ -1,7 +1,7 @@
 ### Pre-requisites
 - Arch
     - Install Paru from AUR
-    - Run `paru -S fzf ripgrep bat git-delta wezterm alacritty`
+    - Run `paru -S fzf ripgrep bat git-delta wezterm alacritty rofi`
 - MacOS
     - Install Brew
     - Run `brew install fzf ripgrep bat git-delta`
