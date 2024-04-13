@@ -9,7 +9,6 @@ return {
     "williamboman/mason.nvim",
     "jay-babu/mason-nvim-dap.nvim",
     "nvim-neotest/nvim-nio",
-
   },
   config = function()
     local dap = require("dap")
@@ -21,7 +20,6 @@ return {
       handlers = {},
 
       ensure_installed = {
-        "delve",
         "javadbg",
         "javatest",
       },
