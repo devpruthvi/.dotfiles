@@ -23,7 +23,13 @@ if [ -f $HOME/.zshrc.custom ]; then
   source $HOME/.zshrc.custom
 fi
 
+# Load Global Alias config
+if [ -f $HOME/.aliasrc ]; then
+  source $HOME/.aliasrc
+fi
+
 # Load Custom Alias config
 if [ -f $HOME/.aliasrc.custom ]; then
   source $HOME/.aliasrc.custom
 fi
+
