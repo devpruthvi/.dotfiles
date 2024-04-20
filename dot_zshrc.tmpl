@@ -18,17 +18,21 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 # Force re-completion
 autoload -U compinit && compinit
 
-# Load Custom Zsh config
-if [ -f $HOME/.zshrc.custom ]; then
-  source $HOME/.zshrc.custom
-fi
+# custom zsh config
+source $HOME/.dotfiles/oh-my-zsh/misc.zsh
 
 # Load Global Alias config
 if [ -f $HOME/.aliasrc ]; then
   source $HOME/.aliasrc
 fi
 
-# Load Custom Alias config
+
+# Load Custom Zsh config, temporary stuff that I don't want to commit goes here
+if [ -f $HOME/.zshrc.custom ]; then
+  source $HOME/.zshrc.custom
+fi
+
+# Load Custom Alias config, temporary stuff that I don't want to commit goes here
 if [ -f $HOME/.aliasrc.custom ]; then
   source $HOME/.aliasrc.custom
 fi

@@ -32,3 +32,4 @@ plugins+=(
 	zsh-history-substring-search
 	zsh-autosuggestions
 )
+
