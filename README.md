@@ -6,3 +6,4 @@
     - Install Brew
     - Run `brew install fzf ripgrep bat git-delta tmux`
     - Run `brew install --cask wezterm alacritty`
+    - Run `brew install --cask nikitabobko/tap/aerospace`
