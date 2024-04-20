@@ -13,6 +13,7 @@ require("lazy").setup({
   },
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
+  require("plugins/fugitive"),
   require("plugins/gitsigns"),
   require("plugins/which-key"),
   require("plugins/telescope"),
