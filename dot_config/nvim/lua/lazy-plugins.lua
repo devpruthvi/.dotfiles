@@ -26,6 +26,7 @@ require("lazy").setup({
   require("plugins/treesitter"),
   require("plugins/debug"),
   require("plugins/undotree"),
+  require("plugins/ui"),
   -- Uncomment to enable indent lines
   -- require 'plugins/indent_line',
 }, {
