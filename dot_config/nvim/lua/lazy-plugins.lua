@@ -27,6 +27,7 @@ require("lazy").setup({
   require("plugins/debug"),
   require("plugins/undotree"),
   require("plugins/ui"),
+  require("plugins.nvim-tmux")
   -- Uncomment to enable indent lines
   -- require 'plugins/indent_line',
 }, {
