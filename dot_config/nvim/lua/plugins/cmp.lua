@@ -3,6 +3,11 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
+      "onsails/lspkind.nvim",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
       {
         "L3MON4D3/LuaSnip",
         build = (function()
@@ -12,13 +17,10 @@ return {
           return "make install_jsregexp"
         end)(),
       },
-      "saadparwaiz1/cmp_luasnip",
-
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-buffer",
     },
     config = function()
+      local lspkind = require("lspkind")
+      lspkind.init({})
       local cmp = require("cmp")
       local luasnip = require("luasnip")
       luasnip.config.setup({})
@@ -52,7 +54,6 @@ return {
         }),
         sources = {
           { name = "nvim_lsp" },
-          { name = "luasnip" },
           { name = "path" },
           { name = "buffer" },
         },

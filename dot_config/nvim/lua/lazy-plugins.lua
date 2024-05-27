@@ -2,7 +2,6 @@ require("lazy").setup({
   "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   "mfussenegger/nvim-jdtls",
 
-  { "numToStr/Comment.nvim", opts = {} },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -13,21 +12,23 @@ require("lazy").setup({
   },
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
-  require("plugins/fugitive"),
-  require("plugins/gitsigns"),
-  require("plugins/which-key"),
-  require("plugins/telescope"),
-  require("plugins/lspconfig"),
-  require("plugins/conform"),
-  require("plugins/cmp"),
-  require("plugins/theme"),
-  require("plugins/todo-comments"),
-  require("plugins/mini"),
-  require("plugins/treesitter"),
-  require("plugins/debug"),
-  require("plugins/undotree"),
-  require("plugins/ui"),
-  require("plugins.nvim-tmux")
+  require("plugins.fugitive"),
+  require("plugins.gitsigns"),
+  require("plugins.which-key"),
+  require("plugins.telescope"),
+  require("plugins.lspconfig"),
+  require("plugins.conform"),
+  require("plugins.cmp"),
+  require("plugins.theme"),
+  require("plugins.ts-comments"),
+  require("plugins.todo-comments"),
+  require("plugins.mini"),
+  require("plugins.treesitter"),
+  require("plugins.debug"),
+  require("plugins.undotree"),
+  require("plugins.ui"),
+  require("plugins.nvim-tmux"),
+  require("plugins.oil"),
   -- Uncomment to enable indent lines
   -- require 'plugins/indent_line',
 }, {
