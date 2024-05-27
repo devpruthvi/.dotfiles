@@ -29,6 +29,7 @@ require("lazy").setup({
   require("plugins.ui"),
   require("plugins.nvim-tmux"),
   require("plugins.oil"),
+  require("plugins.harpoon"),
   -- Uncomment to enable indent lines
   -- require 'plugins/indent_line',
 }, {
