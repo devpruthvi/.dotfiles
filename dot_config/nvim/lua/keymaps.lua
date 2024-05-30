@@ -29,6 +29,7 @@ vim.keymap.set("n", "<leader>pv", "<Cmd>Oil<CR>")
 
 local wk = require("which-key")
 
+-- Gitsigns, Fugitive
 wk.register({
   g = {
     name = "+Git",
@@ -41,3 +42,6 @@ wk.register({
     n = { "<cmd>lua require('gitsigns').next_hunk()<CR>", "Goto Next Hunk" },
   },
 }, { prefix = "<leader>" })
+
+-- Bufferline
+vim.keymap.set("n", "<leader>bl", "<Cmd>BufferLinePick<CR>")
