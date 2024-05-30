@@ -19,10 +19,25 @@ vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", { desc = "Move focus
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  group = vim.api.nvim_create_augroup("UserTextYankHighlightGroup", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
 })
 
 vim.keymap.set("n", "<leader>pv", "<Cmd>Oil<CR>")
+
+local wk = require("which-key")
+
+wk.register({
+  g = {
+    name = "+Git",
+    f = { "<cmd>lua vim.cmd.Git()<CR>", "Fugitive" },
+    s = { "<cmd>lua require('gitsigns').stage_hunk()<CR>", "Stage Hunk" },
+    u = { "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>", "Undo Stage Hunk" },
+    r = { "<cmd>lua require('gitsigns').reset_hunk()<CR>", "Reset Hunk" },
+    p = { "<cmd>lua require('gitsigns').preview_hunk()<CR>", "Preview Hunk" },
+    b = { "<cmd>lua require('gitsigns').blame_line()<CR>", "Blame Line" },
+    n = { "<cmd>lua require('gitsigns').next_hunk()<CR>", "Goto Next Hunk" },
+  },
+}, { prefix = "<leader>" })

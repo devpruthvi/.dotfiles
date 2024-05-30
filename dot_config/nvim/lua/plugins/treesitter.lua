@@ -4,8 +4,18 @@ return {
     build = ":TSUpdate",
     opts = {
       ensure_installed = {
-        "bash", "c", "html", "java", "javascript", "typescript",
-        "lua", "markdown", "python", "vim", "vimdoc", "graphql"
+        "bash",
+        "c",
+        "html",
+        "java",
+        "javascript",
+        "typescript",
+        "lua",
+        "markdown",
+        "python",
+        "vim",
+        "vimdoc",
+        "graphql",
       },
       auto_install = true,
       highlight = { enable = true },
