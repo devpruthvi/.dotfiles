@@ -122,7 +122,7 @@ alt-9 = 'workspace 9'
 alt-a = 'workspace A'
 alt-b = 'workspace B'
 alt-c = 'workspace C'
-alt-d = 'workspace D'
+# alt-d = 'workspace D'
 alt-e = 'workspace E'
 alt-f = 'workspace F'
 alt-g = 'workspace G'
@@ -238,6 +238,10 @@ run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if.app-id = 'com.nicesoftware.dcvviewer'
 run = 'move-node-to-workspace B'
 
 # Finder/Files
