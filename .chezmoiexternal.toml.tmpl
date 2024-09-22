@@ -1,6 +1,6 @@
 {{- $nerdFontsLatest := (gitHubLatestRelease "ryanoasis/nerd-fonts").TagName -}}
 
-{{ $fontPathDict := dict "linux" ".fonts" "darwin" "Library/Fonts"}}
+{{ $fontPathDict := dict "linux" "~/.local/share/fonts" "darwin" "Library/Fonts"}}
 {{ $fontDir := osClean (get $fontPathDict .chezmoi.os) }}
 
 ####################### Tmux ############################

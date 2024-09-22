@@ -18,9 +18,7 @@ plugins=(
 	fzf
 	git
 	macos
-	ripgrep
 	z
-	fzf
 )
 
 # Custom Plugins (installed with .chezmoiexternal)
