@@ -30,18 +30,16 @@ vim.keymap.set("n", "<leader>pv", "<Cmd>Oil<CR>")
 local wk = require("which-key")
 
 -- Gitsigns, Fugitive
-wk.register({
-  g = {
-    name = "+Git",
-    f = { "<cmd>lua vim.cmd.Git()<CR>", "Fugitive" },
-    s = { "<cmd>lua require('gitsigns').stage_hunk()<CR>", "Stage Hunk" },
-    u = { "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>", "Undo Stage Hunk" },
-    r = { "<cmd>lua require('gitsigns').reset_hunk()<CR>", "Reset Hunk" },
-    p = { "<cmd>lua require('gitsigns').preview_hunk()<CR>", "Preview Hunk" },
-    b = { "<cmd>lua require('gitsigns').blame_line()<CR>", "Blame Line" },
-    n = { "<cmd>lua require('gitsigns').next_hunk()<CR>", "Goto Next Hunk" },
-  },
-}, { prefix = "<leader>" })
+wk.add({
+    { "<leader>g", group = "Git" },
+    { "<leader>gb", "<cmd>lua require('gitsigns').blame_line()<CR>", desc = "Blame Line" },
+    { "<leader>gf", "<cmd>lua vim.cmd.Git()<CR>", desc = "Fugitive" },
+    { "<leader>gn", "<cmd>lua require('gitsigns').next_hunk()<CR>", desc = "Goto Next Hunk" },
+    { "<leader>gp", "<cmd>lua require('gitsigns').preview_hunk()<CR>", desc = "Preview Hunk" },
+    { "<leader>gr", "<cmd>lua require('gitsigns').reset_hunk()<CR>", desc = "Reset Hunk" },
+    { "<leader>gs", "<cmd>lua require('gitsigns').stage_hunk()<CR>", desc = "Stage Hunk" },
+    { "<leader>gu", "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>", desc = "Undo Stage Hunk" },
+})
 
 -- Bufferline
 vim.keymap.set("n", "<leader>bl", "<Cmd>BufferLinePick<CR>")
