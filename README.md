@@ -1,9 +1,10 @@
 ### Pre-requisites
 - Arch
     - Install Paru from AUR
-    - Run `paru -S fzf ripgrep bat git-delta wezterm alacritty rofi tmux`
+    - Run `paru -S fzf ripgrep bat git-delta wezterm kitty rofi tmux fd`
 - MacOS
     - Install Brew
-    - Run `brew install fzf ripgrep bat git-delta tmux`
-    - Run `brew install --cask wezterm alacritty`
-    - Run `brew install --cask nikitabobko/tap/aerospace`
+    - Run `brew install fzf ripgrep bat git-delta tmux wget fd`
+    - Run `brew install wezterm kitty`
+    - Run `brew install nikitabobko/tap/aerospace FelixKratz/formulae/borders`
+    - Run `brew install iina`
