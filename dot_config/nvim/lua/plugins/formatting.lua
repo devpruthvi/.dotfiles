@@ -1,5 +1,5 @@
 return {
-  { -- Autoformat
+  {
     "stevearc/conform.nvim",
     keys = {
       {
@@ -27,5 +27,7 @@ return {
         -- javascript = { { "prettierd", "prettier" } },
       },
     },
-  },
+  }, -- Autoformat
+  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 }
