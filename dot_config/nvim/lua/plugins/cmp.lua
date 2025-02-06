@@ -21,7 +21,7 @@ return {
           "rafamadriz/friendly-snippets",
         },
       },
-      "windwp/nvim-autopairs",
+      {"windwp/nvim-autopairs", event = "InsertEnter", config = true},
     },
     config = function()
       local lspkind = require("lspkind")
