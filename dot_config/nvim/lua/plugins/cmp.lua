@@ -21,6 +21,7 @@ return {
           "rafamadriz/friendly-snippets",
         },
       },
+      "windwp/nvim-autopairs",
     },
     config = function()
       local lspkind = require("lspkind")
@@ -67,6 +68,10 @@ return {
           { name = "buffer" },
         },
       })
+      local autopairsInstalled, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+      if autopairsInstalled then
+        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+      end
     end,
   },
 }
