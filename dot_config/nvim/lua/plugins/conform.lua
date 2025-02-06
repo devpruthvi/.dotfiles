@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
+    cmd = { "ConformInfo" },
     keys = {
       {
         "<leader>cf",
@@ -11,21 +12,31 @@ return {
         desc = "[C]ode [F]ormat",
       },
     },
-    opts = {
-      notify_on_error = false,
-      -- format_on_save = {
-      --   timeout_ms = 500,
-      --   lsp_fallback = true,
-      -- },
-      formatters_by_ft = {
-        lua = { "stylua" },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use a sub-list to tell conform to run *until* a formatter
-        -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
-      },
-    },
+    config = function()
+      local conform = require("conform")
+      local prettier = { "prettierd", "prettier", stop_after_first = true }
+      conform.setup({
+        -- format_on_save = {
+        --   timeout_ms = 500,
+        --   lsp_fallback = true,
+        -- },
+        notify_on_error = false,
+        default_format_opts = {
+          lsp_format = "fallback",
+        },
+        formatters_by_ft = {
+          c = { "clang-format" },
+          cpp = { "clang-format" },
+          css = prettier,
+          html = prettier,
+          javascript = prettier,
+          json = prettier,
+          lua = { "stylua" },
+          python = { "isort", "black" },
+          typescript = prettier,
+          yaml = prettier,
+        },
+      })
+    end,
   }, -- Autoformat
 }
