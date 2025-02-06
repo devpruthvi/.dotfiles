@@ -7,7 +7,7 @@ local jdtls_install_dir = mason_registry.get_package("jdtls"):get_install_path()
 local java_test_path = mason_registry.get_package("java-test"):get_install_path()
 local java_debug_path = mason_registry.get_package("java-debug-adapter"):get_install_path()
 
-local java_home = "/usr/lib/jvm/default"
+local java_home = os.getenv("JAVA_HOME")
 
 local bundles = {}
 
