@@ -1,4 +1,5 @@
 [tools]
+go = "latest"
 java = "corretto-21"
 node = "lts"
 python = "latest"
