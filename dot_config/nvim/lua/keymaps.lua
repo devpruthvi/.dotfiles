@@ -4,6 +4,10 @@
 -- Clear highlight on Esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Auto center on <C-u/C-d>
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
