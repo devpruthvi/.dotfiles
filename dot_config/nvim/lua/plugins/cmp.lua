@@ -66,6 +66,7 @@ return {
           { name = "nvim_lsp" },
           { name = "path" },
           { name = "buffer" },
+          { name = "render-markdown" },
         },
       })
       local autopairsInstalled, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
