@@ -1,4 +1,5 @@
 #!/bin/zsh
+autoload -U compinit && compinit
 
 # This needs to be loaded first as it will define the env variables such as $DOTFILES etc.,
 . "$HOME/.dotfiles/defaults.zsh"
@@ -14,9 +15,6 @@ source "$DOTFILES/completions.zsh"
 
 # ohmyzsh
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
-# Force re-completion
-autoload -U compinit && compinit
 
 # Starship Theme
 eval "$(starship init zsh)"
