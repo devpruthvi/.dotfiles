@@ -1,5 +1,5 @@
 #!/bin/sh
-test -d /usr/local/opt/fzf/shell || return 0
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+if command -v fzf >/dev/null 2>&2; then
+    # Set up fzf key bindings and fuzzy completion
+    source <(fzf --zsh)
+fi
