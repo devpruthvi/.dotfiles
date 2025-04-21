@@ -1,0 +1,228 @@
+# 'start-at-login' needs to be 'true' for 'after-login-command' to work
+after-login-command = []
+
+# 'after-startup-command' is run after 'after-login-command'
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
+
+  'workspace browser',
+  'layout accordion',
+
+  'workspace code',
+  'layout accordion',
+
+  'workspace messaging',
+  'layout floating',
+
+  'workspace browser',
+]
+
+start-at-login = true
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 0
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+[key-mapping]
+preset = 'qwerty'
+
+[key-mapping.key-notation-to-key-code]
+browser = 'b'
+code = 'c'
+files = 'f'
+ide = 'i'
+messaging = 'm'
+notes = 'n'
+misc = 'r'
+terminal = 't'
+
+[gaps]
+inner.horizontal = 10
+inner.vertical = 10
+outer.left = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
+
+[mode.main.binding]
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+ctrl-cmd-e = 'balance-sizes'
+ctrl-cmd-shift-e = ['balance-sizes', 'flatten-workspace-tree']
+ctrl-cmd-b = 'layout tiles'
+ctrl-cmd-c = 'split horizontal'
+ctrl-cmd-v = 'split vertical'
+
+# Navigate around the space
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# Move windows in a space
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# Resize current window
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
+
+alt-space = 'fullscreen'
+alt-minus = 'macos-native-minimize'
+
+# Disable built-in shortcuts
+cmd-h = []     # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
+
+alt-tab = 'workspace-back-and-forth'
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+alt-shift-semicolon = 'mode service'
+alt-shift-slash = 'mode join'
+
+# Navigate between spaces
+alt-1 = 'workspace 1'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-2 = 'workspace 2'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-3 = 'workspace 3'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-4 = 'workspace 4'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-5 = 'workspace 5'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-6 = 'workspace 6'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-7 = 'workspace 7'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-8 = 'workspace 8'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-9 = 'workspace 9'
+alt-shift-9 = 'move-node-to-workspace 9'
+
+
+# Named spaces
+alt-b = 'workspace browser'
+alt-shift-b = 'move-node-to-workspace browser'
+
+alt-c = 'workspace code'
+alt-shift-c = 'move-node-to-workspace code'
+
+alt-f = 'workspace files'
+alt-shift-f = 'move-node-to-workspace files'
+
+alt-i = 'workspace ide'
+alt-shift-i = 'move-node-to-workspace ide'
+
+alt-m = 'workspace messaging'
+alt-shift-m = 'move-node-to-workspace messaging'
+
+alt-n = 'workspace notes'
+alt-shift-n = 'move-node-to-workspace notes'
+
+alt-r = 'workspace misc'
+alt-shift-r = 'move-node-to-workspace misc'
+
+alt-t = 'workspace terminal'
+alt-shift-t = 'move-node-to-workspace terminal'
+
+
+[mode.service.binding]
+r = ['flatten-workspace-tree', 'mode main'] # reset layout
+#s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+backspace = ['close-all-windows-but-current', 'mode main']
+esc = ['reload-config', 'mode main']
+
+# 'join' binding mode declaration
+# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+[mode.join.binding]
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
+esc = 'mode main'
+
+####################### MNEMONICS #########################
+# Terminals
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace terminal'
+
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = [
+  "layout floating",
+  "move-node-to-workspace terminal"
+]
+
+# Set layout to tiling on every new tab, MacOS accessibility API has issues with Ghostty tabs
+# Browsers
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace browser'
+
+[[on-window-detected]]
+if.app-id = 'com.vivaldi.Vivaldi'
+run = 'move-node-to-workspace browser'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefoxdeveloperedition'
+run = 'move-node-to-workspace browser'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace browser'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace browser'
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace browser'
+
+[[on-window-detected]]
+if.app-id = 'com.nicesoftware.dcvviewer'
+run = 'move-node-to-workspace browser'
+
+# Finder/Files
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'move-node-to-workspace files'
+
+# IDEs
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+run = 'move-node-to-workspace ide'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace ide'
+
+# Messaging
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace messaging'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace messaging'
+
+[[on-window-detected]]
+if.app-id = 'com.amazon.Amazon-Chime'
+run = 'move-node-to-workspace messaging'
+
+# Notes
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace notes'
+
+####################### /MNEMONICS #########################
+
+[workspace-to-monitor-force-assignment]
+'messaging' = 'secondary'
+
